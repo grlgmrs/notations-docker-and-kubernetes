@@ -1,0 +1,14 @@
+# Agrupamento de API que utilizaremos no Kubernetes, serve para separarmos e agruparmos objetos.
+# Podemos separar, por exemplo, objetos que estão em beta, dos que estão em alfa, ou em release.
+apiVersion: v1
+# Tipo de objeto que vamos criar
+kind: Pod
+metadata:
+  name: meupod
+# Especificação desse objeto, no caso do Pod, especificaremos os containers que irão ser executados
+spec:
+  containers:
+    - name: site
+      image: kubedevio/nginx-color:blue
+      ports:
+        - containerPort: 80

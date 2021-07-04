@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: meureplicaset
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: nginx
+  # Igual o manifesto do nosso pod, com a diferença de que o nome não é especificado, já que várias réplicas serão criadas
+  # o nome é criado, também, em tempo de execução
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: site
+          image: kubedevio/nginx-color:green
+          ports:
+            - containerPort: 80
