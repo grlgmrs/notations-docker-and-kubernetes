@@ -1,3 +1,6 @@
 [submodule "api-conversao"]
 	path = api-conversao
 	url = https://github.com/grlgmrs/api-conversao
+[submodule "rotten-potatoes"]
+	path = rotten-potatoes
+	url = git@github.com:grlgmrs/rotten-potatoes.git
